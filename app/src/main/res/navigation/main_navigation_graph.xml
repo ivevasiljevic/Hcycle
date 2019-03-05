@@ -2,12 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main_navigation_graph"
-            app:startDestination="@id/splashScreen">
+            app:startDestination="@id/tripFragment">
 
-    <fragment android:id="@+id/splashScreen" android:name="com.assign.hcycle.views.fragments.SplashScreen"
-              android:label="fragment_splash_screen" tools:layout="@layout/fragment_splash_screen">
-        <action android:id="@+id/action_splashScreen_to_homeScreen" app:destination="@id/homeScreen"/>
-    </fragment>
-    <fragment android:id="@+id/homeScreen" android:name="com.assign.hcycle.views.fragments.HomeScreen"
-              android:label="fragment_home_screen" tools:layout="@layout/fragment_home_screen"/>
+    <fragment android:id="@+id/tripFragment" android:name="com.assign.hcycle.views.fragments.TripFragment"
+              android:label="fragment_home_screen" tools:layout="@layout/fragment_trip"/>
+    <fragment android:id="@+id/eventsFragment" android:name="com.assign.hcycle.views.fragments.EventsFragment"
+              android:label="fragment_events" tools:layout="@layout/fragment_events"/>
+    <fragment android:id="@+id/statsFragment" android:name="com.assign.hcycle.views.fragments.StatsFragment"
+              android:label="fragment_stats" tools:layout="@layout/fragment_stats"/>
+    <fragment android:id="@+id/profileFragment" android:name="com.assign.hcycle.views.fragments.ProfileFragment"
+              android:label="fragment_profile" tools:layout="@layout/fragment_profile"/>
 </navigation>
