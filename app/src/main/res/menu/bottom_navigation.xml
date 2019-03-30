@@ -13,8 +13,4 @@
           android:id="@+id/statsFragment"
           android:icon="@drawable/ic_stats"/>
 
-    <item android:title="Profile"
-          android:id="@+id/profileFragment"
-          android:icon="@drawable/ic_profile"/>
-
 </menu>
