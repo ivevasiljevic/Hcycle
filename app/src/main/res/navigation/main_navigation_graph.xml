@@ -10,6 +10,5 @@
               android:label="fragment_events" tools:layout="@layout/fragment_events"/>
     <fragment android:id="@+id/statsFragment" android:name="com.assign.hcycle.views.fragments.StatsFragment"
               android:label="fragment_stats" tools:layout="@layout/fragment_stats"/>
-    <fragment android:id="@+id/profileFragment" android:name="com.assign.hcycle.views.fragments.ProfileFragment"
-              android:label="fragment_profile" tools:layout="@layout/fragment_profile"/>
+
 </navigation>

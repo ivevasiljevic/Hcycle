@@ -21,6 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bottomNavigation"
-            app:menu="@menu/bottom_navigation"/>
+            app:menu="@menu/bottom_navigation"
+            app:itemBackground="@color/splashColor"
+            app:itemTextColor="@color/bottom_nav_items_color"
+            app:itemIconTint="@color/bottom_nav_items_color"
+            android:background="@color/splashColor"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

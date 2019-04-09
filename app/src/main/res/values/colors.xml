@@ -3,5 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="splashColor">#FFFFFF</color>
+    <color name="splashColor">#292735</color>
+    <color name="appColor">#CC292735</color>
+    <color name="inactiveBottomItem">#8091e220</color>
+    <color name="textColor">#d9dde2</color>
 </resources>
