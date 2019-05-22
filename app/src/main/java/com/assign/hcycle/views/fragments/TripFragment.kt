@@ -2,13 +2,12 @@ package com.assign.hcycle.views.fragments
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
-import android.opengl.Visibility
+import android.app.AlertDialog
 import android.os.Bundle
 import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import androidx.fragment.app.Fragment
 import com.assign.hcycle.R
 import com.assign.hcycle.viewmodels.TripViewModel
@@ -16,7 +15,6 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import kotlinx.android.synthetic.main.fragment_trip.*
-import kotlinx.android.synthetic.main.fragment_trip.view.*
 
 class TripFragment : Fragment(), OnMapReadyCallback {
 
@@ -68,11 +66,43 @@ class TripFragment : Fragment(), OnMapReadyCallback {
 
             tripTimer.stop()
             pauseOffset = SystemClock.elapsedRealtime() - tripTimer.base
-            false
+
+            AlertDialog.Builder(context)
+                .setTitle("Do you want to stop your current session?")
+                .setPositiveButton("Save") { dialog, which ->
+
+                    //SAVE CURRENT SESSION
+                    tripTimer.base = SystemClock.elapsedRealtime()
+                    pauseOffset = 0
+                    tripTimer.stop()
+                    startStopTrip.text = "START"
+                    isTripActive = false
+                }
+                .setNeutralButton("Resume") { dialog, which ->
+
+                    tripTimer.base = SystemClock.elapsedRealtime() - pauseOffset
+                    tripTimer.start()
+
+                    isTripActive = true
+                }
+                .setNegativeButton("Discard") { dialog, which ->
+
+                    //DISCARD CURRENT SESSION
+                    tripTimer.base = SystemClock.elapsedRealtime()
+                    pauseOffset = 0
+                    tripTimer.stop()
+                    startStopTrip.text = "START"
+                    isTripActive = false
+                }
+                .create()
+                .show()
+
+            isTripActive
         }
         else {
             tripTimer.base = SystemClock.elapsedRealtime() - pauseOffset
             tripTimer.start()
+            startStopTrip.text = "STOP"
             true
         }
     }
